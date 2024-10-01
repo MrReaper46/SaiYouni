@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IfStatementPractise : MonoBehaviour
@@ -121,58 +123,148 @@ public class IfStatementPractise : MonoBehaviour
     void BaiTap7()
     {
         // Nhập tuổi của người mua vé từ bàn phím
+        int age = Random.Range(0, 100);
+        int ticket = 50000;
         // Nếu người mua dưới 18 tuổi, giá vé là 50,000 đồng
         // Nếu người mua từ 18 tuổi trở lên, giá vé là 100,000 đồng
+        if (age < 18)
+        {
+            ticket = 50000;
+        }
+        else ticket = 100000;
+        Debug.Log($"Bai Tap 7: Tuoi khach hang: {age} - gia ve: {ticket}");
     }
 
     // Bài Tập 8: Kiểm Tra Học Sinh Xuất Sắc
     void BaiTap8()
     {
         // Nhập điểm trung bình của học sinh từ bàn phím
+        float score = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 100.0f) * 0.01f;
         // Kiểm tra xem học sinh có đạt danh hiệu xuất sắc không (điểm trung bình >= 9.0)
+        if (score >= 9.0f)
+        {
+            Debug.Log($"Bai Tap 8: Diem trung binh:{score} - Hoc sinh dat loai xuat sac");
+        }
+        else Debug.Log($"Bai Tap 8: Diem trung binh: {score} - Hoc sinh chua dat loai xuat sac");
     }
 
     // Bài Tập 9: So Sánh Ba Số
     void BaiTap9()
     {
         // Nhập ba số nguyên từ bàn phím
+        int a = Random.Range(0, 100);
+        int b = Random.Range(0, 100);
+        int c = Random.Range(0, 100);
+        int[] intArr = { a, b, c };
         // Kiểm tra và in ra số lớn nhất trong ba số đó
+        int max = intArr[0];
+        for (int i = 0; i < 3; i++)
+        {
+            if (intArr[i] > max)
+            {
+                max = intArr[i];
+            }
+        }
+        Debug.Log($"Bai Tap 9: so lon nhat trong 3 so [{string.Join(", ", intArr)}] la so {max}");
     }
 
     // Bài Tập 10: Tính Tiền Lương
     void BaiTap10()
     {
         // Nhập số giờ làm việc và mức lương cố định từ bàn phím
+        float workHour = Random.Range(0.0f, 100.0f);
+        const float wage = 50;
+        float wageReceived = wage;
         // Nếu nhân viên làm trên 40 giờ, lương được tính thêm giờ
         // Nếu làm dưới hoặc bằng 40 giờ, lương tính theo giờ cố định
+        if (workHour <= 40.0f)
+        {
+            wageReceived = wage;
+        }
+        else wageReceived = wage + wage * (workHour - 40) / 100;
+        Debug.Log($"Bai tap 10: So gio lam viec: {workHour} - Tong luong: {wageReceived}");
     }
 
     // Bài Tập 11: Kiểm Tra Điều Kiện Vào Câu Lạc Bộ
     void BaiTap11()
     {
         // Nhập tuổi và kiểm tra xem người đó có thẻ thành viên hay không
+        int age = Random.Range(0, 100);
+        bool isMember = Random.Range(0, 2) == 0;
         // Kiểm tra nếu trên 18 tuổi và có thẻ thành viên thì được vào câu lạc bộ
+        if (!isMember)
+        {
+            Debug.Log($"Bai tap 11: Tuoi khach hang: {age} - khong co the thanh vien => khong duoc vao clb");
+        }
+        else if (isMember && age <= 18)
+        {
+            Debug.Log($"Bai tap 11: Tuoi khach hang: {age} - co the thanh vien => khong duoc vao clb");
+        }
+        else Debug.Log($"Bai tap 11: Tuoi khach hang: {age} - co the thanh vien => duoc vao clb");
     }
-
     // Bài Tập 12: Phân Loại Học Sinh
     void BaiTap12()
     {
         // Nhập điểm trung bình của học sinh từ bàn phím
+        float score = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 10.0f) * 0.1f;
         // Phân loại học sinh theo thang điểm từ xuất sắc đến yếu
+        string rank = "";
+        if (score < 5.0)
+        {
+            rank = "Yeu";
+        }
+        else if (score >= 5.0 && score <= 6.5)
+        {
+            rank = "Trung binh";
+        }
+        else if (score > 6.5 && score < 8.0)
+        {
+            rank = "Kha";
+        }
+        else if (score > 8.0 && score <= 9.0)
+        {
+            rank = "Gioi";
+        }
+        else rank = "Xuat sac";
+        Debug.Log($"Bai tap 12: Diem tb: {score} - Thanh tich: {rank}");
     }
 
     // Bài Tập 13: Tính Tiền Điện
     void BaiTap13()
     {
         // Nhập số điện tiêu thụ từ bàn phím
+        float totalConsume = Random.Range(0, 1000);
         // Tính tiền điện theo công thức: <= 100 kWh: 1,500 đồng/kWh, >100 kWh: 2,000 đồng/kWh
+        float unitPrice;
+        if (totalConsume <= 100)
+        {
+            unitPrice = 1500;
+        }
+        else unitPrice = 2000;
+        float bill = totalConsume * unitPrice;
+        Debug.Log($"Bai Tap 13: So dien tieu tu: {totalConsume}kWh - Tong tien dien: {bill}VND");
     }
 
     // Bài Tập 14: Kiểm Tra Điều Kiện Thăng Chức
     void BaiTap14()
     {
         // Nhập số năm làm việc và đánh giá công việc
+        int year = Random.Range(0, 30); 
+        bool revaluated = Random.Range(0, 2) == 0;
+        string workRevaluation = "";
+        string promotion = "";
         // Kiểm tra nếu số năm làm việc trên 5 năm và đánh giá tốt thì đủ điều kiện thăng chức
+        if (revaluated)
+        {
+            workRevaluation = "Tot";
+        }
+        else workRevaluation = "Khong tot";
+        if (year > 5 && revaluated)
+        {
+            promotion = "duoc thang chuc";
+        }
+        else promotion = "khong duoc thang chuc";
+        Debug.Log($"Bai Tap 14: So nam lam viec: {year} nam - Danh gia cong viec: {workRevaluation} => {promotion}");
     }
 
     // Bài Tập 15: Kiểm Tra Điều Kiện Miễn Phí Vận Chuyển
