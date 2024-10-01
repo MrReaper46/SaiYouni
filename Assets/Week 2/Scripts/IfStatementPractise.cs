@@ -33,42 +33,88 @@ public class IfStatementPractise : MonoBehaviour
     void BaiTap1()
     {
         // Nhập một số từ bàn phím
+        int number = Random.Range(-100, 100);
         // Kiểm tra xem số đó là số dương, âm hay bằng 0
+        if (number == 0)
+        {
+            Debug.Log($"Bai Tap 1: {number} la so 0");
+        }
+        else if(number > 0)
+        {
+            Debug.Log($"Bai Tap 1: {number} la so duong");
+        }
+        else Debug.Log($"Bai Tap 1: {number} la so am");
     }
 
     // Bài Tập 2: Kiểm Tra Số Chẵn Hay Lẻ
     void BaiTap2()
     {
         // Nhập một số từ bàn phím
+        int number = Random.Range(0, 100);
         // Kiểm tra xem số đó là số chẵn hay lẻ
+        if (number % 2 == 0)
+        {
+            Debug.Log($"Bai Tap 2: {number} la so chan");
+        }
+        else Debug.Log($"Bai Tap 2: {number} la so le");
     }
 
     // Bài Tập 3: Kiểm Tra Điều Kiện Thi Đỗ
     void BaiTap3()
     {
         // Nhập điểm trung bình của học sinh từ bàn phím
+        float score = Random.Range(0, 10);
         // Kiểm tra nếu điểm trung bình >= 5.0 thì học sinh đỗ, ngược lại thì trượt
+        if (score >= 5.0f)
+        {
+            Debug.Log($"Bai Tap 3: Voi so diem la {score} - KQ: hoc sinh do");
+        }
+        else Debug.Log($"Bai Tap 3: Voi so diem la {score} - KQ: hoc sinh truot");
     }
 
     // Bài Tập 4: Tìm Số Lớn Nhất Trong Hai Số
     void BaiTap4()
     {
         // Nhập hai số nguyên từ bàn phím
+        int numberA = Random.Range(0, 100);
+        int numberB = Random.Range(0, 100);
         // Kiểm tra và in ra số lớn nhất trong hai số đó
+        if (numberA == numberB)
+        {
+            Debug.Log($"Bai Tap 4: so thu nhat: \"{numberA}\" bang voi so thu hai: \"{numberB}\"");
+        }
+        else if (numberA < numberB)
+        {
+            Debug.Log($"Bai Tap 4: so thu nhat: \"{numberA}\" nho hon voi so thu hai: \"{numberB}\"");
+        }
+        else Debug.Log($"Bai Tap 4: so thu nhat: \"{numberA}\" lon hon voi so thu hai: \"{numberB}\"");
     }
 
     // Bài Tập 5: Kiểm Tra Điều Kiện Mua Hàng
     void BaiTap5()
     {
         // Nhập số tiền hiện có và giá sản phẩm từ bàn phím
+        int balance = Random.Range(0, 1000);
+        int price = Random.Range(0, 1000);
         // Kiểm tra xem người dùng có đủ tiền mua hàng không
+        if(balance >= price)
+        {
+            Debug.Log($"Bai Tap 5: Voi so tien ${balance}, nguoi dung du tien mua mon hang voi gia ${price}");
+        }
+        else Debug.Log($"Bai Tap 5: Voi so tien ${balance}, nguoi dung khong du tien mua mon hang voi gia ${price}");
     }
 
     // Bài Tập 6: Kiểm Tra Năm Nhuận
     void BaiTap6()
     {
         // Nhập một năm từ bàn phím
+        int year = Random.Range(0, 2024);
         // Kiểm tra xem năm đó có phải là năm nhuận hay không
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            Debug.Log($"Bai Tap 6: {year} la nam nhuan");
+        }
+        else Debug.Log($"Bai Tap 6: {year} khong phai la nam nhuan");
     }
 
     // Bài Tập 7: Tính Giá Vé Xem Phim

@@ -49,7 +49,7 @@ public class ForeachPractise : MonoBehaviour
         int[] numbers = { 10, 20, 30, 40, 50 };
         // Sử dụng foreach để tính tổng tất cả các phần tử trong mảng
         int sum = 0;
-        foreach(int number in numbers)
+        foreach (int number in numbers)
         {
             sum += number;
         }
@@ -238,7 +238,7 @@ public class ForeachPractise : MonoBehaviour
         // Tạo một mảng số nguyên
         int[] numbers = { 3, 1, 4, 4, 5, 5, 2, 6 };
         // Sử dụng foreach để tìm phần tử lớn thứ hai trong mảng
-        int largest = numbers[0]; 
+        int largest = numbers[0];
         int secondLargest;
         foreach (int number in numbers)
         {

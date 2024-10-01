@@ -846,8 +846,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1974425438}
-  maxHealth: 0
   minHealth: 100
+  maxHealth: 0
+  currentHealth: 0
 --- !u!114 &898656687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,12 +1243,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.834
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 6bfde5699ad2bda46b5bcbe37c47246a, type: 3}
+        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
