@@ -38,3 +38,19 @@ Nhược điểm: Hiệu suất giảm nếu chọn pivot không tốt.
 # Thuật toán thêm khác với thuật toán đã học
 
 ## Trả lời
+Counting Sort
+Nguyên lý hoạt động:
+
+Đếm số lần xuất hiện của mỗi phần tử trong mảng.
+Sử dụng thông tin này để đặt các phần tử vào vị trí chính xác trong mảng kết quả
+
+Ưu điểm: 
+1. Không phụ thuộc vào so sánh: Counting Sort không dựa trên so sánh giữa các phần tử như nhiều thuật toán sắp xếp khác (như Quick Sort hay Merge Sort). Điều này giúp nó vượt qua giới hạn thời gian O(n log n) của các thuật toán dựa trên so sánh.
+2.  Tốt cho các tập dữ liệu có phạm vi giá trị nhỏ: Counting Sort phù hợp cho các tập dữ liệu có số lượng phần tử lớn nhưng phạm vi giá trị (k) nhỏ, chẳng hạn như khi sắp xếp các số nguyên có giá trị nhỏ (ví dụ: từ 0 đến 100)
+3.Ổn định: Counting Sort là thuật toán sắp xếp ổn định. Nghĩa là thứ tự tương đối giữa các phần tử có giá trị bằng nhau sẽ được giữ nguyên.
+
+Nhược điểm:
+1. Không phù hợp với dữ liệu có phạm vi giá trị lớn: Khi phạm vi của các giá trị trong tập dữ liệu quá lớn (ví dụ như từ 1 đến một tỷ), Counting Sort trở nên không hiệu quả do phải tạo một mảng phụ có kích thước k. Điều này dẫn đến việc tiêu tốn nhiều bộ nhớ.
+2. Bộ nhớ phụ tốn kém: Counting Sort cần một mảng đếm có kích thước k, tương ứng với giá trị lớn nhất trong mảng đầu vào. Do đó, nếu k rất lớn so với số phần tử cần sắp xếp (n), thuật toán sẽ tiêu tốn nhiều bộ nhớ và có thể gây ra vấn đề về không gian lưu trữ.
+3. Chỉ hoạt động tốt với dữ liệu rời rạc: Counting Sort chỉ phù hợp với các tập dữ liệu có dạng rời rạc (như số nguyên hoặc ký tự). Nó không hoạt động tốt với dữ liệu dạng liên tục (như số thực), vì không thể dễ dàng tạo mảng đếm cho các giá trị này.
+4. Không thích hợp cho dữ liệu động: Nếu dữ liệu thay đổi liên tục (ví dụ: chèn, xoá phần tử), thì Counting Sort không phải là lựa chọn tốt vì phải tái xây dựng mảng đếm cho mỗi thay đổi.

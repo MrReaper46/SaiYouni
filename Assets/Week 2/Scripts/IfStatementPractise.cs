@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class IfStatementPractise : MonoBehaviour
@@ -41,7 +37,7 @@ public class IfStatementPractise : MonoBehaviour
         {
             Debug.Log($"Bai Tap 1: {number} la so 0");
         }
-        else if(number > 0)
+        else if (number > 0)
         {
             Debug.Log($"Bai Tap 1: {number} la so duong");
         }
@@ -99,7 +95,7 @@ public class IfStatementPractise : MonoBehaviour
         int balance = Random.Range(0, 1000);
         int price = Random.Range(0, 1000);
         // Kiểm tra xem người dùng có đủ tiền mua hàng không
-        if(balance >= price)
+        if (balance >= price)
         {
             Debug.Log($"Bai Tap 5: Voi so tien ${balance}, nguoi dung du tien mua mon hang voi gia ${price}");
         }
@@ -249,7 +245,7 @@ public class IfStatementPractise : MonoBehaviour
     void BaiTap14()
     {
         // Nhập số năm làm việc và đánh giá công việc
-        int year = Random.Range(0, 30); 
+        int year = Random.Range(0, 30);
         bool revaluated = Random.Range(0, 2) == 0;
         string workRevaluation = "";
         string promotion = "";
@@ -271,40 +267,116 @@ public class IfStatementPractise : MonoBehaviour
     void BaiTap15()
     {
         // Nhập giá trị đơn hàng từ bàn phím
+        int price = Random.Range(1000, 10000000);
         // Kiểm tra nếu giá trị đơn hàng >= 500,000 đồng thì được miễn phí vận chuyển
+        string freeShipping = "";
+        if (price >= 500000)
+        {
+            freeShipping = "mien phi";
+        }
+        else freeShipping = "khong mien phi";
+        Debug.Log($"Bai Tap 15: Gia tri don hang {price} VND - Phi van chuyen: {freeShipping}");
     }
 
     // Bài Tập 16: Tính Thuế Thu Nhập Cá Nhân
     void BaiTap16()
     {
         // Nhập thu nhập từ bàn phím
+        int income = Random.Range(1000000, 100000000);
+        float tax = 0;
         // Tính thuế thu nhập cá nhân dựa trên mức thu nhập
+        if (income <= 5000000)
+        {
+            tax = income * 0.05f;
+        }
+        else if (income <= 10000000)
+        {
+            tax = 5000000 * 0.05f + (income - 5000000) * 0.1f;
+        }
+        else if (income <= 18000000)
+        {
+            tax = 5000000 * 0.05f + 5000000 * 0.1f + (income - 10000000) * 0.15f;
+        }
+        else if (income <= 32000000)
+        {
+            tax = 5000000 * 0.05f + 5000000 * 0.1f + 8000000 * 0.15f + (income - 18000000) * 0.2f;
+        }
+        else if (income <= 52000000)
+        {
+            tax = 5000000 * 0.05f + 5000000 * 0.1f + 8000000 * 0.15f + 14000000 * 0.2f + (income - 32000000) * 0.25f;
+        }
+        else if (income <= 80000000)
+        {
+            tax = 5000000 * 0.05f + 5000000 * 0.1f + 8000000 * 0.15f + 14000000 * 0.2f + 20000000 * 0.25f + (income - 52000000) * 0.3f;
+        }
+        else
+        {
+            tax = 5000000 * 0.05f + 5000000 * 0.1f + 8000000 * 0.15f + 14000000 * 0.2f + 20000000 * 0.25f + 28000000 * 0.3f + (income - 80000000) * 0.35f;
+        }
+        Debug.Log($"Bai Tap 16: Voi muc luong: {income} - Thue TNCN: {tax}");
     }
 
     // Bài Tập 17: Tính Điểm Trung Bình Của Môn Học
     void BaiTap17()
     {
         // Nhập điểm của 3 bài kiểm tra từ bàn phím
+        float scoreA = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 100.0f) * 0.01f;
+        float scoreB = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 100.0f) * 0.01f;
+        float scoreC = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 100.0f) * 0.01f;
         // Tính điểm trung bình và kiểm tra xem học sinh có đạt yêu cầu hay không (>= 5.0)
+        float avgScore = (scoreA + scoreB + scoreC) / 3;
+        string pass = "";
+        if (avgScore >= 5.0f)
+        {
+            pass = "dat yeu cau";
+        }
+        else pass = "khong dat yeu cau";
+        Debug.Log($"Bai Tap 17: Diem mon A: {scoreA} - Diem mon B: {scoreB} - Diem mon C: {scoreC} \n Diem trung binh: {avgScore} - hoc sinh {pass}");
     }
 
     // Bài Tập 18: Kiểm Tra Điều Kiện Nhập Hàng
     void BaiTap18()
     {
         // Nhập số lượng hàng hiện tại và kiểm tra khả năng nhập thêm hàng (dưới 100 và còn chỗ)
+        int currentShipment = Random.Range(1, 200);
+        string storage = "";
+        if (currentShipment < 100)
+        {
+            storage = "co kha nang nhap hang";
+        }
+        else storage = "khong the nhap hang";
+        Debug.Log($"Bai Tap 18: so luong hang hien tai: {currentShipment} => {storage}");
     }
 
     // Bài Tập 19: Tìm Số Lớn Hơn 10
     void BaiTap19()
     {
         // Nhập một số từ bàn phím
+        int number = Random.Range(0, 100);
         // Kiểm tra xem số đó có lớn hơn 10 hay không
+        if (number == 10)
+        {
+            Debug.Log($"Bai Tap 19: so {number} = 10");
+        }
+        else if (number > 10)
+        {
+            Debug.Log($"Bai Tap 19: so {number} > 10");
+        }
+        else Debug.Log($"Bai Tap 19: so {number} < 10");
     }
 
     // Bài Tập 20: Kiểm Tra Điều Kiện Đăng Ký Khóa Học
     void BaiTap20()
     {
         // Nhập điểm tổng kết và các điều kiện khác từ bàn phím
+        float score = (float)Mathf.Round(Random.Range(0.0f, 10.0f) * 100.0f) * 0.01f;
         // Kiểm tra xem học sinh có đủ điều kiện đăng ký khóa học nâng cao không
+        string pass = "";
+        if (score >= 5.0)
+        {
+            pass = "du dieu kien";
+        }
+        else pass = "khong du dieu kien";
+        Debug.Log($"Bai Tap 20: Diem thi sinh: {score} => thi sinh {pass} dang ky hoc khoa nang cao");
     }
 }
