@@ -8,7 +8,13 @@ public class EnemyAbstract : MonoBehaviour
     int enemyHPCurrent = 100;
     int enemyHPMax = 100;
     bool isDead = false;
-    
+    int minHP = 0;
+    int maxHP = 100;
+
+    private void Awake()
+    {
+        this.RandomHP();
+    }
     public bool IsDead()
     {
         if (this.enemyHPCurrent <= 0) this.isDead = true;
@@ -23,5 +29,10 @@ public class EnemyAbstract : MonoBehaviour
     {
         this.enemyHPCurrent = newHP;
         return this.enemyHPCurrent;
+    }
+    protected void RandomHP()
+    {
+        int newHP = Random.Range(this.minHP, this.maxHP + 1);
+        this.SetHP(newHP);
     }
 }
