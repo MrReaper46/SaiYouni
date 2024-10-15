@@ -24,7 +24,23 @@ public class ANDPractice : MonoBehaviour
     void BaiTap1()
     {
         // Nhập tuổi, giấy phép lái xe, và kinh nghiệm lái xe
+        int age = Random.Range(0, 100);
+        bool hasLicenced;
+        if (age < 18) hasLicenced = false;
+        hasLicenced = Random.Range(0, 2) == 0;
+        string Licence;
+        if (hasLicenced == true)
+        {
+            Licence = "co";
+        }
+        else Licence = "khong";
+        int experience;
+        if (age <= 18) experience = 0;
+        experience = Random.Range(0, age - 18);
+        Debug.Log($"Bai Tap 1: Tuoi: {age} - GPLX: {Licence} - So nam kn: {experience}");
         // Kiểm tra nếu người dùng trên 18 tuổi, có giấy phép lái xe, và có kinh nghiệm trên 1 năm
+        if (age >= 18 && hasLicenced == true && experience >= 1) Debug.Log("Nguoi dung du dieu kien");
+        else Debug.Log("Nguoi dung khong du dieu kien");
     }
 
     // Bài Tập 2: Kiểm Tra Điều Kiện Vào Công Viên Giải Trí
