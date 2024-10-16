@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ANDPractice : MonoBehaviour
@@ -47,21 +49,72 @@ public class ANDPractice : MonoBehaviour
     void BaiTap2()
     {
         // Nhập thông tin về vé, đã đăng ký trước, và tiền sử bệnh tim
+        bool hasTicket = Random.Range(0, 2) == 0;
+        string ve;
+        if (hasTicket == true)
+        {
+            ve = "co";
+        }
+        else ve = "khong";
+        bool isRegistered = Random.Range(0, 2) == 0;
+        string dk;
+        if (isRegistered == true)
+        {
+            dk = "co";
+        }
+        else dk = "khong";
+        bool hasCVD = Random.Range(0, 2) == 0;
+        string benhtim;
+        if (hasCVD == true)
+        {
+            benhtim = "co";
+        }
+        else benhtim = "khong";
+        Debug.Log($"Bai Tap 2: Tinh trang ve: {ve} - Da dang ki: {dk} - benh tim: {benhtim}");
         // Kiểm tra nếu người dùng có vé, đã đăng ký trước, và không có tiền sử bệnh tim
+        if (hasTicket == true && isRegistered == true && hasCVD != true) Debug.Log("Nguoi dung du dieu kien");
+        else Debug.Log("Nguoi dung khong du dieu kien");
     }
 
     // Bài Tập 3: Điều Kiện Đạt Học Bổng
     void BaiTap3()
     {
         // Nhập điểm trung bình, điểm hoạt động ngoại khóa, và kiểm tra kỷ luật
+        float avgscore = Random.Range(0.0f, 10.00001f);
+        float extrascore = Random.Range(0.0f, 10.00001f);
+        bool violation = Random.Range(0, 2) == 0;
+        string kiluat;
+        if (violation == true)
+        {
+            kiluat = "co";
+        }
+        else kiluat = "khong";
+        Debug.Log($"Bai Tap 3: Diem TB: {avgscore} - Diem ngoai khoa: {extrascore} - Vi pham ky luat: {kiluat}");
         // Kiểm tra nếu điểm trung bình >= 9.0, điểm ngoại khóa >= 8.0, và không vi phạm kỷ luật
+        if (avgscore >= 9.0f && extrascore >= 8.0f && violation != true) Debug.Log("SV du dieu kien nhan hoc bong");
+        else Debug.Log("SV khong du dieu kien nhan hoc bong");
     }
 
     // Bài Tập 4: Kiểm Tra Đăng Ký Hợp Lệ
     void BaiTap4()
     {
         // Nhập thông tin email, xác nhận qua điện thoại, và phí tham gia
+        bool emailconfirm = Random.Range(0, 2) == 0;
+        string email;
+        if (emailconfirm == true) email = "hop le";
+        else email = "khong hop le";
+        bool phoneconfirm = Random.Range(0, 2) == 0;
+        string phone;
+        if (phoneconfirm == true) phone = "hop le";
+        else phone = "khong hop le";
+        bool feeconfirm = Random.Range(0, 2) == 0;
+        string fee;
+        if (feeconfirm == true) fee = "da thanh toan";
+        else fee = "chua thanh toan";
+        Debug.Log($"Bai Tap 4: Email: {email} - So dien thoai: {phone} - Phi tham gia: {fee}");
         // Kiểm tra nếu email hợp lệ, đã xác nhận qua điện thoại, và đã thanh toán phí tham gia
+        if(emailconfirm == true&&phoneconfirm == true&& feeconfirm == true) Debug.Log("Dang ki hop le");
+        else Debug.Log("Dang ki khong hop le");
     }
 
     // Bài Tập 5: Kiểm Tra Điều Kiện Thi Lại
