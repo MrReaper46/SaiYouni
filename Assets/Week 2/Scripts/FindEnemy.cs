@@ -5,12 +5,12 @@ using UnityEngine;
 public class FindEnemy : MonoBehaviour
 {
     //----------------------Edit below here --------------------
-    public Enemy FindEnemyWithSmallestHealth()
+    public EnemyPosition FindEnemyWithSmallestHealth()
     {
         return null;
     }
 
-    public Enemy FindEnemyWithLargestHealth()
+    public EnemyPosition FindEnemyWithLargestHealth()
     {
         return null;
     }
