@@ -13,7 +13,7 @@ public class EnemyCtrl : PersonalBehaviour
     {
         base.LoadComponents();
         this.LoadAgent();
-        this.LoadAnimator();
+        this.LoadAnimator();        
     }
     protected virtual void LoadAgent()
     {
