@@ -24,7 +24,7 @@ public class EnemyMoving : EnemyAbstract
     protected virtual void LoadPathFinding()
     {
         if (this.path != null) return;
-        this.path = GameObject.Find("CheckPoints").GetComponent<PathFinding>();
+        this.path = GameObject.Find("CheckPointsManager").GetComponent<PathFinding>();
         Debug.Log(transform.name + ": LoadCheckPoints", gameObject);
     }
     protected virtual void Moving()

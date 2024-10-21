@@ -4,27 +4,25 @@ using UnityEngine;
 public class TurretCtrl : PersonalBehaviour
 {
     [SerializeField] protected TurretTargetSystem turretTargetSystem;
-    [SerializeField] protected SphereCollider turretCollider;
-
+    public TurretTargetSystem TurretTargetSystem => turretTargetSystem;
+    [SerializeField] protected Transform rotator;
+    public Transform Rotator => rotator;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadTurretTargetSystem();
-        this.LoadTurretCollider();
+        this.LoadRotator();
     }
-
     protected virtual void LoadTurretTargetSystem()
     {
-        if (turretTargetSystem != null) return;
+        if (this.turretTargetSystem != null) return;
         this.turretTargetSystem = transform.Find("TurretTargetSystem").GetComponent<TurretTargetSystem>();
         Debug.Log(transform.name + ": LoadTurretTargetSystem", gameObject);
     }
-    protected virtual void LoadTurretCollider()
+    protected virtual void LoadRotator()
     {
-        if (turretCollider != null) return;
-        this.turretCollider = transform.Find("TurretTargetSystem").GetComponent<SphereCollider>();
-        this.turretCollider.isTrigger = true;
-        this.turretCollider.radius = 15;
+        if (this.rotator!= null) return;
+        this.rotator = transform.Find("Model").Find("Rotator");
         Debug.Log(transform.name + ": LoadTurretTargetSystem", gameObject);
     }
 }

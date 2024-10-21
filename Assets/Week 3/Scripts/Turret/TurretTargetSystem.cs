@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(SphereCollider))]
 public class TurretTargetSystem : PersonalBehaviour
 {
-    [SerializeField] List<EnemyCtrl> enemies = new();
-    [SerializeField] EnemyCtrl nearest;
-    
+    [SerializeField] protected List<EnemyCtrl> enemies = new();
+    [SerializeField] protected EnemyCtrl nearest;
+    [SerializeField] protected SphereCollider turretCollider;
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadTurretCollider();
+    }
+    protected virtual void LoadTurretCollider()
+    {
+        if (this.turretCollider != null) return;
+        this.turretCollider = GetComponent<SphereCollider>();
+        this.turretCollider.isTrigger = true;
+        this.turretCollider.radius = 12;
+        Debug.Log(transform.name + ": LoadTurretCollider", gameObject);
+    }
     protected virtual void FixedUpdate()
     {
         this.FindNearest();
@@ -36,6 +50,7 @@ public class TurretTargetSystem : PersonalBehaviour
     }
     protected virtual void RemoveEnemy(EnemyCtrl enemyCtrl)
     {
+        if (this.nearest == enemyCtrl) this.nearest = null;
         this.enemies.Remove(enemyCtrl);
     }
     protected virtual void FindNearest()
@@ -51,5 +66,9 @@ public class TurretTargetSystem : PersonalBehaviour
                 this.nearest = enemyCtrl;
             }
         }
+    }
+    public virtual EnemyCtrl GetTarget()
+    {
+        return this.nearest;
     }
 }
