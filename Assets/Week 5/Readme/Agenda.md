@@ -2,7 +2,7 @@
 
 ## 1. Kỹ Thuật Spawner<T> Có Tên Gọi Là Gì
 
-Trả lời: Object Pool Pattern
+Trả lời: tạo đối tưởng sử dụng kỹ thuật Object Pool Pattern
 
 ## 2. Bài Tập Sử Dụng `<T>`
 
