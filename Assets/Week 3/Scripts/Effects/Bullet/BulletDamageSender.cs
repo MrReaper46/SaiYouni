@@ -10,11 +10,9 @@ public class BulletDamageSender : DamageSender
     {
         if (this._collider != null) return;
         this._collider = GetComponent<Collider>();
+        this._collider.isTrigger = true;
         this.sphereCollider = (SphereCollider)this._collider;
-        this.sphereCollider.isTrigger = true;
         this.sphereCollider.radius = 0.5f;
-        Debug.Log(transform.name + ": Load" + _collider, gameObject);
+        Debug.Log(transform.name + ": LoadTriggerCollider", gameObject);
     }
-
-
 }

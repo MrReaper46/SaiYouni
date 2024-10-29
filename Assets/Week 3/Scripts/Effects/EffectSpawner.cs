@@ -8,7 +8,6 @@ public class EffectSpawner : PersonalSingleton<EffectSpawner>
     public virtual void SpawnBullet(Vector3 firePosition, Quaternion rotation)
     {
         GameObject newBullet = Instantiate(this.bullet);
-        newBullet.transform.position = firePosition;
-        newBullet.transform.rotation = rotation;
+        newBullet.transform.SetPositionAndRotation(firePosition, rotation);
     }
 }

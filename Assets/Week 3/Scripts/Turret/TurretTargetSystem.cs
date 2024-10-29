@@ -35,7 +35,7 @@ public class TurretTargetSystem : PersonalBehaviour
         if (enemyCtrl == null) return;
 
         this.AddEnemy(enemyCtrl);
-        Debug.Log(transform.name + ": " + collider.name, collider.gameObject);
+        //Debug.Log(transform.name + ": " + collider.name, collider.gameObject);
     }
     protected virtual void OnTriggerExit(Collider collider)
     {
