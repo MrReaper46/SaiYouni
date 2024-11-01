@@ -19,13 +19,8 @@ public abstract class DamageReceiver : PersonalBehaviour
         this.isDead = this.currentHP <= 0;
         return isDead;
     }
-    protected virtual void OnDead()
-    {
-        //For override
-    }
-    protected virtual void OnHurt()
-    {
-        //For override
-    }
+    protected abstract void OnDead();
+
+    protected abstract void OnHurt();
 
 }

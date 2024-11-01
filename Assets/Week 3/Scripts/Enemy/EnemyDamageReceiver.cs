@@ -10,6 +10,6 @@ public class EnemyDamageReceiver : DamageReceiver
     }
     protected override void OnHurt()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
