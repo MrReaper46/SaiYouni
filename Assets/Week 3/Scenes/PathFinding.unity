@@ -931,7 +931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c686f89ec94828c45a79d2361d9167ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1938221183}
+  spawnCount: 0
+  inPoolObjs: []
 --- !u!1 &936926339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,11 +2060,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895084770}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1938221183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8148709988405305101, guid: 2aa10eafbb69d5b4492a9b660c74fe4d, type: 3}
-  m_PrefabInstance: {fileID: 8061580721128605940}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1938221184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6987499438759896308, guid: 2aa10eafbb69d5b4492a9b660c74fe4d, type: 3}

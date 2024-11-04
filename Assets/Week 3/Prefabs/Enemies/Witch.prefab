@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d4cc8539b246e46b61e31717a4339f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ctrl: {fileID: 383196812928119294}
+  ctrl: {fileID: 0}
   path: {fileID: 0}
   currentCheckPointIndex: 0
   currentCheckPoint: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788377581034918855}
   - component: {fileID: 3874509823427322494}
-  - component: {fileID: 383196812928119294}
+  - component: {fileID: 3687444554389465328}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Untagged
@@ -111,7 +111,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &383196812928119294
+--- !u!114 &3687444554389465328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,9 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 991720754400061185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0396dfd4ccb4465418087dae0253d626, type: 3}
+  m_Script: {fileID: 11500000, guid: df34b002634415443a0a5e34e198078e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawn: {fileID: 0}
   agent: {fileID: 3874509823427322494}
   animator: {fileID: 6936062793972036367}
 --- !u!1 &4172570437591039073
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 10
   maxHP: 10
+  isDead: 0
 --- !u!1 &7041237189662618415
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class TurretShootSystem : TurretDataProcessor
         this.timer = 0;
 
         FirePoint firePoint = this.GetFirePoint();
-        EffectSpawner.Instance.SpawnBullet(firePoint.transform.position,firePoint.transform.rotation);
+        //EffectSpawnerCtrl.Instance.Spawner.Spawn(firePoint.transform.position,firePoint.transform.rotation);
     }
     protected virtual FirePoint GetFirePoint()
     {
